@@ -37,6 +37,19 @@ wezterm.on("update-status", function(window, pane)
     end
     window:set_left_status(name or "")
 end)
+wezterm.on(
+    "format-tab-title",
+    function(tab)
+        local pane = tab.active_pane
+        local is_zoomed = pane.is_zoomed
+        if is_zoomed then
+            return {
+                { Background = { Color = "#2980b9" }},
+                { Text = "🔍 Zoomed" },
+            }
+        end
+    end
+)
 
 -- Keybindings
 config.keys = {
