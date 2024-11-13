@@ -4,7 +4,11 @@ local config = wezterm.config_builder()
 
 local action = wezterm.action
 
-config.default_prog = { "C:/Program Files/Git/bin/bash.exe", "-i", "-l" }
+if os.getenv("OS") == "Windows_NT" then
+    config.default_prog = { "C:/Program Files/Git/bin/bash.exe", "-i", "-l" }
+else
+    config.default_prog = { "/usr/bin/zsh" }
+end
 
 config.color_scheme = "Catppuccin Mocha (Gogh)"
 
