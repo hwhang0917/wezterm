@@ -22,7 +22,7 @@ config.window_decorations = "RESIZE"
 
 config.window_background_opacity = 0.8
 
-wezterm.on("update-right-status", function(window, pane)
+wezterm.on("update-right-status", function(window, _)
     local date = wezterm.strftime "%F %p %H:%M:%S "
 
     local bat = ""
@@ -34,7 +34,7 @@ wezterm.on("update-right-status", function(window, pane)
         { Text = bat .. "   " .. date },
     })
 end)
-wezterm.on("update-status", function(window, pane)
+wezterm.on("update-status", function(window, _)
     local name = window:active_key_table()
     if name then
         name = "✨"
