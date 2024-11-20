@@ -58,7 +58,7 @@ wezterm.on(
 -- Keybindings
 config.keys = {
     {
-        key = "a",
+        key = "b",
         mods = "CTRL",
         action = action.ActivateKeyTable {
             name = "prefix_actions",
