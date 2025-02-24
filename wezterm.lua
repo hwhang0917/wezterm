@@ -6,6 +6,7 @@ local action = wezterm.action
 
 if os.getenv("OS") == "Windows_NT" then
     config.default_prog = { "C:/Program Files/Git/bin/bash.exe", "-i", "-l" }
+    -- config.default_prog = { "wsl", "--cd", "~" }
 else
     config.default_prog = { "/usr/bin/zsh" }
 end
@@ -17,7 +18,7 @@ config.font = wezterm.font_with_fallback {
     "D2Coding ligature",
     "Segoe UI Emoji",
 }
-config.font_size = 16
+config.font_size = 12
 config.window_decorations = "RESIZE"
 
 config.window_background_opacity = 0.8
