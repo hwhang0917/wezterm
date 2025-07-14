@@ -16,6 +16,7 @@ config.font = wezterm.font_with_fallback {
     "D2Coding ligature",
     "Segoe UI Emoji",
 }
+config.harfbuzz_features = { 'calt = 0', 'clig = 0', 'liga = 0' }
 config.font_size = 14
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.9
