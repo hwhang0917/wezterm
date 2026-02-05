@@ -12,15 +12,16 @@ config.front_end = "WebGpu"
 
 config.color_scheme = "Catppuccin Mocha (Gogh)"
 config.font = wezterm.font_with_fallback({
-	-- { family = "FiraCode Nerd Font Ret" },
-	{ family = "Terminess Nerd Font Mono" },
+	{ family = "FiraCode Nerd Font Ret" },
+	-- { family = "Terminess Nerd Font Mono" },
 	"D2Coding ligature",
 	"Segoe UI Emoji",
 })
 config.harfbuzz_features = { "calt = 0", "clig = 0", "liga = 0" }
-config.font_size = 16
+-- config.font_size = 16
+config.font_size = 12
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 1
+config.window_background_opacity = 0.9
 
 local function get_process_icon(process_name)
 	if process_name then
@@ -51,7 +52,7 @@ config.keys = {
 	{
 		key = "o",
 		mods = "CTRL|SHIFT",
-		action = wezterm.action_callback(function(window, pane)
+		action = wezterm.action_callback(function(window, _)
 			local overrides = window:get_config_overrides() or {}
 			if overrides.window_background_opacity == 1.0 then
 				overrides.window_background_opacity = 0.9
@@ -67,6 +68,11 @@ config.keys = {
 		action = wezterm.action.SpawnCommandInNewTab({
 			args = { os.getenv("PROGRAMFILES") .. "\\Git\\bin\\bash.exe" },
 		}),
+	},
+	{
+		key = "Enter",
+		mods = "SHIFT",
+		action = wezterm.action({ SendString = "\x1b\r" }),
 	},
 }
 
