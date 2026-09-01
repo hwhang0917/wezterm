@@ -22,23 +22,23 @@ config.front_end = "WebGpu"
 -- Appearance
 -- =============================================================================
 
-config.color_scheme = "rose-pine-dawn"
+config.color_scheme = "rose-pine"
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.9
 
 -- Rose Pine Dawn palette
 local palette = {
-    base = "#faf4ed",
-    surface = "#fffaf3",
-    overlay = "#f2e9e1",
-    text = "#575279",
-    muted = "#9893a5",
+    base = "#191724",
+    surface = "#1f1d2e",
+    overlay = "#26233a",
+    text = "#e0def4",
+    muted = "#6e6a86",
 }
 
 config.window_frame = {
     active_titlebar_bg = palette.base,
     inactive_titlebar_bg = palette.base,
-    font = wezterm.font({ family = "FiraCode Nerd Font Ret", weight = "Bold" }),
+    font = wezterm.font({ family = "FiraCode Nerd Font Ret" }),
     font_size = 11,
 }
 
